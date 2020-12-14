@@ -18,6 +18,8 @@
     <?php 
     include("menu.php");
     ?>
+    
+    <div class="container">
     <div class="section-1 section-1-marg">
         <h2 class="font-weight-bold" style="margin-top: 8%;margin-left: 8%;margin-bottom: 2%;">
             Mise un compagnon en adoption
@@ -95,6 +97,7 @@
                 <input type="submit" class="btn btn-primary btn-lg" value="Envoyer">
             </div>
         </form>
+    </div>
     </div>
     <!--  FOOTER START -->
     <?php

@@ -1,6 +1,5 @@
 <?php
 $csv = fopen('csv/animaux.csv', 'rb');
-
 $lines = [];
 while(! feof($csv)) {
     $lines[] = fgets($csv);    
@@ -12,9 +11,7 @@ $animaux = [];
 $n = count($lines);
 for ($i = 0; $i < $n && $i < 5; $i++){
     $line = $lines[$i];
-
     $elements = explode(",", $line);
-
     $animal["id"] = $elements[0];
     $animal["nom"] = $elements[1];
     $animal["type"] = $elements[2];
@@ -49,32 +46,42 @@ for ($i = 0; $i < $n && $i < 5; $i++){
     <?php 
     include("menu.php");
     ?>
-    <div class="bagr-pg">
-        <div class="header">
-            <h1 class="display">Vous avez besoin d'un compagnon, <br>Adoptez-moi</h1>
-            <form class="form-inline md-form mr-9 mb-4 recherche">
-                <input class="form-control col-lg-4 col-md-8" type="text" placeholder="Nom, Type ou Râce" aria-label="Rechercher">
+    <div class="container" style="max-width:100%">
+        <div class="container text-center" style="max-width:100%;border: 1px solid black;height:800px;margin-top:120px;background-image: url('IMAGE/img1.jpg');background-size: cover;">
+            <h1 style="margin-top: 300px;color:gold">Vous avez besoin d'un compagnon, <br>Adoptez-moi</h1>
+            <form action="resultat.php" method="post" class="form-inline md-form mr-9 mb-4">
+                <input name="rechercher" class="form-control col-lg-4 offset-lg-4 col-md-12" type="text" placeholder="Nom, Type ou Râce" aria-label="Rechercher">
                 <button class="btn btn-primary aqua-gradient btn-rounded btn-lg-4" type="submit">Rechercher</button>
             </form>
         </div>
-    </div>
-    <div class="section-1 section-0-marg">
-            <?php
-            foreach($animaux as $animal):
-            ?>
-            <div class="list-inline">
-                <label>Nom du compagnon : <?=$animal["nom"]?> </label><br>
-                <label>Type du compagnon : <?=$animal["type"]?> </label><br>
-                <a href="animal.php?id=<?=$animal["id"]?>" class="btn btn-primary btn-lg">
-                    Plus details
-                </a>
+        <!--
+        <div class="bagr-pg">
+            <div class="header">
+                <h1 class="display">Vous avez besoin d'un compagnon, <br>Adoptez-moi</h1>
+                <form action="resultat.php" method="post" class="form-inline md-form mr-9 mb-4 recherche">
+                    <input name="rechercher" class="form-control col-lg-4 col-md-8" type="text" placeholder="Nom, Type ou Râce" aria-label="Rechercher">
+                    <button class="btn btn-primary aqua-gradient btn-rounded btn-lg-4" type="submit">Rechercher</button>
+                </form>
             </div>
-                <hr>
-            <?php
-            endforeach;
-            ?>
+        </div>
+-->
+        <div class="section-1 section-1-marg" style="margin-top: -150px;">
+                <?php
+                foreach($animaux as $animal):
+                ?>
+                <div class="list-inline">
+                    <label>Nom du compagnon : <?=$animal["nom"]?> </label><br>
+                    <label>Type du compagnon : <?=$animal["type"]?> </label><br>
+                    <a href="animal.php?id=<?=$animal["id"]?>" class="btn btn-primary btn-lg">
+                        Plus details
+                    </a>
+                </div>
+                    <hr>
+                <?php
+                endforeach;
+                ?>
+        </div>
     </div>
-
     <!--  FOOTER START -->
         <?php
         include("footer.php");

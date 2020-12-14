@@ -1,4 +1,5 @@
 <div class="footer">
+<div class="container">
         <div class="inner-footer">
             <div>
                 <h2>Adoptez<span class="text-primary"> moi</span></h2>
@@ -21,4 +22,5 @@
                 </ul>
             </div>
         </div>
+      </div>
     </div>
