@@ -49,7 +49,7 @@ for ($i = 0; $i < $n && $i < 5; $i++){
     <div class="container" style="max-width:100%">
         <div class="container text-center" style="max-width:100%;border: 1px solid black;height:800px;margin-top:120px;background-image: url('IMAGE/img1.jpg');background-size: cover;">
             <h1 style="margin-top: 300px;color:gold">Vous avez besoin d'un compagnon, <br>Adoptez-moi</h1>
-            <form action="resultat.php" method="post" class="form-inline md-form mr-9 mb-4">
+            <form action="resultat.php" method="get" class="form-inline md-form mr-9 mb-4">
                 <input name="rechercher" class="form-control col-lg-4 offset-lg-4 col-md-12" type="text" placeholder="Nom, Type ou Râce" aria-label="Rechercher">
                 <button class="btn btn-primary aqua-gradient btn-rounded btn-lg-4" type="submit">Rechercher</button>
             </form>
@@ -79,7 +79,6 @@ for ($i = 0; $i < $n && $i < 5; $i++){
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-
 </body>
 
 </html>

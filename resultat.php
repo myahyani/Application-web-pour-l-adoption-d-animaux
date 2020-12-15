@@ -1,7 +1,6 @@
 <?php 
     $lines = [];
-    $mot_cle = trim($_POST["rechercher"]);
-
+    $mot_cle = trim($_GET["rechercher"]);
     if (empty($mot_cle)){
         header('Location: index.php');
         exit;
@@ -14,12 +13,9 @@
     unset($lines[0]);
     $animaux = [];
     $n = count($lines);
-    for ($i = 0; $i <= $n; $i++){
+    for ($i = 1; $i <= $n; $i++){
         $line = $lines[$i];
-        strtolower($line);
-        strtolower($mot_cle);
-
-        if(strpos($line, $mot_cle) !== false) {  
+        if(stripos ($line, $mot_cle) !== false) {  
             $elements = explode(",", $line);
             $animal["id"] = $elements[0];
             $animal["nom"] = $elements[1];
@@ -33,9 +29,9 @@
             $animal["code-postale"] = $elements[9];
             $animaux[] = $animal;
         }
-
     }
-    if (strpos($line, $mot_cle) === false) {
+    
+    if (empty($animaux)) {
     header('Location: nontrouver.php');
     }
     fclose($csv);
@@ -62,20 +58,20 @@
     ?>
     <div class="container" style="margin-top: 120px;margin-bottom:180px">
     <h2>Résultats de votre recherche</h2>
-    <?php
+        <?php
             foreach($animaux as $animal):
         ?>
                 <div class="list-inline">
                     <label>Nom du compagnon : <?=$animal["nom"]?> </label><br>
-                    <label>Type du compagnon : <?=$animal["type"]?> </label><br>
+                    <label>Description du compagnon : <?=$animal["description"]?> </label><br>
                     <a href="animal.php?id=<?=$animal["id"]?>" class="btn btn-primary btn-lg">
                         Plus details
                     </a>
                 </div>
-                    <hr>
-                    <?php
+                <hr>
+        <?php
             endforeach;
-            ?>
+        ?>
     </div>
     <!--  FOOTER START -->
     <?php
