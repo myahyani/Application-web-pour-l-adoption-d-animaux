@@ -1,18 +1,3 @@
-<?php
-if (!empty($_POST)){
-    $csv = fopen('csv/animaux.csv', 'rb');
-    while(! feof($csv)) {
-        $line = fgets($csv);    
-    }
-    $elements = explode(",", $line);
-    $id = $elements[0];
-    $id = (int) substr($line, 1);
-    $id += 1;
-    $text= "\nX".$id.",".$_POST["nom"].",".$_POST["type"].",".$_POST["race"].",".$_POST["age"].",".$_POST["descr"].",".$_POST["email"].",".$_POST["adrciv"].",".$_POST["ville"].",".$_POST["codpos"];
-    file_put_contents('csv/animaux.csv', $text, FILE_APPEND);
-}
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -35,7 +20,7 @@ if (!empty($_POST)){
     ?>
     <div class="section-0 section-1-marg">
             <div class="section-4">
-                <h1 class="text-capitalize font-weight-bold" style="margin-top: 10%;margin-left: 8%;margin-bottom: 2%;" id="texteenreg">Merci,<br> Le compagnon est ajoutée dans notre base de données.</h1>
+                <h1 class="text-capitalize font-weight-bold" style="margin-top: 10%;margin-left: 8%;margin-bottom: 2%;" id="texteenreg">Malheureusement,<br> Le compagnon que vous cherchez n'existe pas.</h1>
             </div>
         </div>
     <!--  FOOTER START -->

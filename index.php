@@ -54,17 +54,7 @@ for ($i = 0; $i < $n && $i < 5; $i++){
                 <button class="btn btn-primary aqua-gradient btn-rounded btn-lg-4" type="submit">Rechercher</button>
             </form>
         </div>
-        <!--
-        <div class="bagr-pg">
-            <div class="header">
-                <h1 class="display">Vous avez besoin d'un compagnon, <br>Adoptez-moi</h1>
-                <form action="resultat.php" method="post" class="form-inline md-form mr-9 mb-4 recherche">
-                    <input name="rechercher" class="form-control col-lg-4 col-md-8" type="text" placeholder="Nom, Type ou Râce" aria-label="Rechercher">
-                    <button class="btn btn-primary aqua-gradient btn-rounded btn-lg-4" type="submit">Rechercher</button>
-                </form>
-            </div>
-        </div>
--->
+
         <div class="section-1 section-1-marg" style="margin-top: -150px;">
                 <?php
                 foreach($animaux as $animal):

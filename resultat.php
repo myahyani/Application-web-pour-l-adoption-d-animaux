@@ -16,6 +16,8 @@
     $n = count($lines);
     for ($i = 0; $i <= $n; $i++){
         $line = $lines[$i];
+        strtolower($line);
+        strtolower($mot_cle);
 
         if(strpos($line, $mot_cle) !== false) {  
             $elements = explode(",", $line);
@@ -31,6 +33,10 @@
             $animal["code-postale"] = $elements[9];
             $animaux[] = $animal;
         }
+
+    }
+    if (strpos($line, $mot_cle) === false) {
+    header('Location: nontrouver.php');
     }
     fclose($csv);
 ?>
