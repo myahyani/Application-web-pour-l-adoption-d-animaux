@@ -6,7 +6,8 @@
     <link rel="icon" href="image/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
 
     <title>Mise en adoption</title>
 </head>
@@ -24,33 +25,35 @@
         <h2 class="font-weight-bold" style="margin-top: 8%;margin-left: 8%;margin-bottom: 2%;">
             Mise un compagnon en adoption
         </h2>
-        <form name="adopt" action="e-adopt.php" onsubmit="validForm()" method="post" style="margin-left: 2%;">
+        <form name="adopt" action="e-adopt.php" onsubmit="validerForm(event)" method="post" style="margin-left: 2%;">
             <!--Nom-->
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="nom" class="col-form-label col-sm-6 text-right">Nom du compagnon</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="nom" name="nom" type="text" required><!--pattern="[A-Za-z' ']+" minlength="3" maxlength="20"-->
+                    <input class="form-control" id="nom" name="nom" type="text">
+                    <span id="erreur-nom" style="color: red;"></span>
                 </div>
             </div>
             <!--Type-->
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="type" class="col-form-label col-sm-6 text-right">Type du compagnon</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="type" name="type" type="text"  required><!--pattern="[A-Za-z' ']+"-->
+                    <input class="form-control" id="type" name="type" type="text" pattern="[A-Za-z' ']+" required>
                 </div>
             </div>
             <!--Race-->
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="race" class="col-form-label col-sm-6 text-right">Race du compagnon</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="race" name="race" type="text" required><!--pattern="[A-Za-z' ']+"--> 
+                    <input class="form-control" id="race" name="race" type="text" pattern="[A-Za-z' ']+" required>
                 </div>
             </div>
             <!--Age-->
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="race" class="col-form-label col-sm-6 text-right">L'Âge du compagnon</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="age" name="age" type="number" required><!--min="0" max="30" -->
+                    <input class="form-control" id="age" name="age" type="number">
+                    <span id="erreur-age" style="color: red;"></span>
                 </div>
             </div>
             <!--Description-->
@@ -64,7 +67,8 @@
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="email" class="col-form-label col-sm-6 text-right">Adresse courriel</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="email" name="email" type="email" required>
+                    <input class="form-control" id="email" name="email" type="text">
+                    <span id="erreur-email" style="color: red;"></span>
                 </div>
             </div>
             <!--Adresse-->
@@ -89,12 +93,14 @@
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="codpos" class="col-form-label col-sm-6 text-right">Code postale</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="codpos" name="codpos" type="text" required> <!--pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"-->
+                    <input class="form-control" id="codpos" name="codpos" type="text">
+                    <span id="erreur-codpos" style="color: red;"></span>
                 </div>
             </div>
             <!--Submit-->
             <div>
                 <input type="submit" class="btn btn-primary btn-lg" value="Envoyer">
+                <input type="reset" class="btn btn-primary btn-lg" value="Réinitialiser">
             </div>
         </form>
     </div>
@@ -103,49 +109,11 @@
     <?php
         include("footer.php");
         ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
-    <script>
-        function validForm() 
-        { 
-            var nom = document.forms["adopt"]["nom"];               
-            /*var type = document.forms["adopt"]["type"];    
-            var race = document.forms["adopt"]["race"];*/  
-            var age =  document.forms["adopt"]["age"];  
-            /*var descreption = document.forms["adopt"]["descr"];*/
-            var email = document.forms["adopt"]["email"];  
-            /*var adresse_civique = document.forms["adopt"]["adrciv"]; 
-            var ville = document.forms["adopt"]["ville"];*/
-            var code_postale = document.forms["adopt"]["codpos"]; 
-
-            if (nom.length < 3 || nom.length > 20 || nom == "") 
-          { 
-            <?="Le nom doit être entre 3 et 20 caractéres."?>; 
-          } 
-            if (age < 0 || age > 30 || age == "") 
-          { 
-                <?="L'âge doit être entre 0 et 30 ans."?>; 
-            }    
-            if (email.value == "")                                   
-          { 
-            <?="Mettez une adresse email valide."?>; 
-               
-          if (email.value.indexOf("@", 0) < 0)                 
-          { 
-            <?="Mettez une adresse email valide."?>; 
-          }    
-          if (email.value.indexOf(".", 0) < 0)                 
-          { 
-            <?="Mettez une adresse email valide."?>; 
-          }    
-            if (code_postale != /^[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]*$/) 
-          { 
-                <?="Entrez un code postale valide."?>; 
-          }    
-        }
-    </script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 </body>
 
 </html>
