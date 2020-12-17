@@ -16,30 +16,12 @@ html {
     color: teal;
 }
 
-.logo {
-    float: left !important;
-}
-
-
-/* info */
-
-.info {
-    z-index: 1;
-    width: 100%;
-    background-color: white;
-    text-align: center;
-    padding: 10px 0px;
-    position: fixed;
-    top: 0;
-}
-
 
 /* navigation */
 
 ul {
     list-style-type: none;
     overflow: hidden;
-    background-color: #333;
     z-index: 1;
     padding: 0;
 }
@@ -60,7 +42,7 @@ a {
 .nav ul {
     margin: 0;
     padding: 0;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0);
     width: 100%;
 }
 
@@ -132,7 +114,7 @@ a {
 }
 
 .section-1-marg {
-    margin: 120px 15px 175px 15px;
+    margin: 20px 15px 175px 15px;
 }
 
 #texteenreg {

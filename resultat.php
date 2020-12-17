@@ -50,9 +50,6 @@
 </head>
 
 <body>
-    <div class="info">
-        Appelez-nous au : +1 (514) 863-2918 📞| De 7h à 17h | 5j / 7j
-    </div>
     <?php 
     include("menu.php");
     ?>

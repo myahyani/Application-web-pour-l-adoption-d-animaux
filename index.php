@@ -40,14 +40,11 @@ for ($i = 0; $i < $n && $i < 5; $i++){
 </head>
 
 <body>
-    <div class="info">
-        Appelez-nous au : +1 (514) 863-2918 📞| De 7h à 17h | 5j / 7j
-    </div>
     <?php 
     include("menu.php");
     ?>
     <div class="container" style="max-width:100%">
-        <div class="container text-center" style="max-width:100%;border: 1px solid black;height:800px;margin-top:120px;background-image: url('IMAGE/img1.jpg');background-size: cover;">
+        <div class="container text-center" style="max-width:100%;border: 1px solid black;height:800px;margin-top:20px;background-image: url('IMAGE/img1.jpg');background-size: cover;">
             <h1 style="margin-top: 300px;color:gold">Vous avez besoin d'un compagnon, <br>Adoptez-moi</h1>
             <form action="resultat.php" method="get" class="form-inline md-form mr-9 mb-4">
                 <input name="rechercher" class="form-control col-lg-4 offset-lg-4 col-md-12" type="text" placeholder="Nom, Type ou Râce" aria-label="Rechercher">
@@ -56,6 +53,7 @@ for ($i = 0; $i < $n && $i < 5; $i++){
         </div>
 
         <div class="section-1 section-1-marg" style="margin-top: -150px;">
+        <h3>Liste des compagnons à adopter</h3>
                 <?php
                 foreach($animaux as $animal):
                 ?>
