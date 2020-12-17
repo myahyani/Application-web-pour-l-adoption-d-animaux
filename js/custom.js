@@ -44,6 +44,10 @@ function validerForm(e) {
         nom.focus();
         window.scrollTo(0, 0);
         return false;
+    } else if (nom.value.match(/^[^,]$/)) {
+        erreurNom.textContent = "Le format du nom est incorrect.";
+        nom.focus();
+        return false;
     }
 
     if (!type.value.length) {
@@ -56,6 +60,10 @@ function validerForm(e) {
         type.focus();
         window.scrollTo(0, 0);
         return false;
+    } else if (type.value.match(/^[^,]$/)) {
+        erreurType.textContent = "Le format du type est incorrect.";
+        type.focus();
+        return false;
     }
 
     if (!race.value.length) {
@@ -64,9 +72,13 @@ function validerForm(e) {
         window.scrollTo(0, 0);
         return false;
     } else if (!race.value.match(/^[A-Za-z' ']+$/)) {
-        erreurRace.textContent = "La race du type est incorrect.";
+        erreurRace.textContent = "La race de la race est incorrect.";
         race.focus();
         window.scrollTo(0, 0);
+        return false;
+    } else if (race.value.match(/^[^,]$/)) {
+        erreurRace.textContent = "Le format de la race est incorrect.";
+        race.focus();
         return false;
     }
 
@@ -80,12 +92,24 @@ function validerForm(e) {
         age.focus();
         window.scrollTo(0, 0);
         return false;
+    } else if (!age.value.match(/^\d{1,2}$/)) {
+        erreurAge.textContent = "Le format d'âge est incorrect.";
+        age.focus();
+        return false;
     }
 
     if (!descr.value.length) {
         erreurDescr.textContent = "Entrez la description du compagnon.";
         descr.focus();
         window.scrollTo(0, 0);
+        return false;
+    } else if (!descr.value.match(/^[a-zA-Z0-9" "]+$/)) {
+        erreurDescr.textContent = "Le format de la description est incorrect.";
+        descr.focus();
+        return false;
+    } else if (descr.value.match(/^[^,]$/)) {
+        erreurDescr.textContent = "Le format de la description est incorrect.";
+        descr.focus();
         return false;
     }
 
@@ -97,16 +121,37 @@ function validerForm(e) {
         erreurEmail.textContent = "Le format d'email est incorrect.";
         email.focus();
         return false;
+    } else if (email.value.match(/^[^,]$/)) {
+        erreurEmail.textContent = "Le format d'email est incorrect.";
+        email.focus();
+        return false;
     }
 
     if (!adrciv.value.length) {
         erreurAdrciv.textContent = "Entrez l'adresse civique du compagnon.";
         adrciv.focus();
         return false;
+    } else if (!adrciv.value.match(/^[a-zA-Z0-9" "]+$/)) {
+        erreurAdrciv.textContent = "Le format d'adresse civique est incorrect.";
+        adrciv.focus();
+        return false;
+    } else if (adrciv.value.match(/^[^,]$/)) {
+        erreurAdrciv.textContent = "Le format d'adresse civique est incorrect.";
+        adrciv.focus();
+        return false;
     }
 
     if (!ville.value.length) {
         erreurVille.textContent = "Entrez la ville du compagnon.";
+        ville.focus();
+        return false;
+
+    } else if (!ville.value.match(/^[a-zA-Z0-9" "]+$/)) {
+        erreurVille.textContent = "Le format de la ville est incorrect.";
+        ville.focus();
+        return false;
+    } else if (ville.value.match(/^[^,]$/)) {
+        erreurVille.textContent = "Le format de la ville est incorrect.";
         ville.focus();
         return false;
     }
@@ -117,6 +162,10 @@ function validerForm(e) {
         return false;
     } else if (!code_postale.value.match(/^[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]+$/)) {
         erreurCodPos.textContent = "Entrez un code postale valide.";
+        code_postale.focus();
+        return false;
+    } else if (code_postale.value.match(/^[^,]$/)) {
+        erreurCodPos.textContent = "Le format du code postale est incorrect.";
         code_postale.focus();
         return false;
     }
