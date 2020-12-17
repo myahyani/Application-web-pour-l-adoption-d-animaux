@@ -38,14 +38,16 @@
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="type" class="col-form-label col-sm-6 text-right">Type du compagnon</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="type" name="type" type="text" pattern="[A-Za-z' ']+" required>
+                    <input class="form-control" id="type" name="type" type="text">
+                    <span id="erreur-type" style="color: red;"></span>
                 </div>
             </div>
             <!--Race-->
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="race" class="col-form-label col-sm-6 text-right">Race du compagnon</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="race" name="race" type="text" pattern="[A-Za-z' ']+" required>
+                    <input class="form-control" id="race" name="race" type="text">
+                    <span id="erreur-race" style="color: red;"></span>
                 </div>
             </div>
             <!--Age-->
@@ -60,7 +62,8 @@
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="descr" class="col-form-label col-sm-6 text-right">Description</label>
                 <div class="col-sm-6">
-                    <textarea class="form-control" id="descr" name="descr" pattern="[A-Za-z' ']+" required></textarea>
+                    <textarea class="form-control" id="descr" name="descr"></textarea>
+                    <span id="erreur-descr" style="color: red;"></span>
                 </div>
             </div>
             <!--Email-->
@@ -79,14 +82,16 @@
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="adrciv" class="col-form-label col-sm-6 text-right">Adresse civique</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="adrciv" name="adrciv" type="text" required>
+                    <input class="form-control" id="adrciv" name="adrciv" type="text">
+                    <span id="erreur-adrciv" style="color: red;"></span>
                 </div>
             </div>
             <!--Ville-->
             <div class="form-group row justify-content-center col-sm-8">
                 <label for="ville" class="col-form-label col-sm-6 text-right">Ville</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="ville" name="ville" type="text" required>
+                    <input class="form-control" id="ville" name="ville" type="text">
+                    <span id="erreur-ville" style="color: red;"></span>
                 </div>
             </div>
             <!--Code postal-->
