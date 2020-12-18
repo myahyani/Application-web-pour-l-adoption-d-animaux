@@ -41,9 +41,8 @@ for ($i = 0; $i < $n && $i < 5; $i++){
 
 <body>
     <?php 
-    include("menu.php");
+    include("_menu.php");
     ?>
-    <div class="container" style="max-width:100%">
         <div class="container text-center" style="max-width:100%;border: 1px solid black;height:800px;margin-top:20px;background-image: url('IMAGE/img1.jpg');background-size: cover;">
             <h1 style="margin-top: 300px;color:gold">Vous avez besoin d'un compagnon, <br>Adoptez-moi</h1>
             <form action="resultat.php" method="get" class="form-inline md-form mr-9 mb-4">
@@ -51,28 +50,26 @@ for ($i = 0; $i < $n && $i < 5; $i++){
                 <button class="btn btn-primary aqua-gradient btn-rounded btn-lg-4" type="submit">Rechercher</button>
             </form>
         </div>
-
-        <div class="section-1 section-1-marg" style="margin-top: -150px;">
-        <h3>Liste des compagnons à adopter</h3>
-                <?php
-                foreach($animaux as $animal):
-                ?>
-                <div class="list-inline">
-                    <label>Nom du compagnon : <?=$animal["nom"]?> </label><br>
-                    <label>Type du compagnon : <?=$animal["type"]?> </label><br>
-                    <a href="animal.php?id=<?=$animal["id"]?>" class="btn btn-primary btn-lg">
-                        Plus details
-                    </a>
-                </div>
-                    <hr>
-                <?php
-                endforeach;
-                ?>
-        </div>
-    </div>
+            <div class="section-1 section-1-marg" style="margin-top: -150px;">
+                <h3>Liste des compagnons à adopter</h3>
+                    <?php
+                    foreach($animaux as $animal):
+                    ?>
+                    <div class="list-inline" style="margin-left: 100px;">
+                            <label>Nom du compagnon : <?=$animal["nom"]?> </label><br>
+                            <label>Type du compagnon : <?=$animal["type"]?> </label><br>
+                        <a href="animal.php?id=<?=$animal["id"]?>" class="btn btn-primary btn-lg">
+                            Plus details
+                        </a>
+                    </div>
+                        <hr>
+                    <?php
+                    endforeach;
+                    ?>
+            </div>
     <!--  FOOTER START -->
         <?php
-        include("footer.php");
+        include("_footer.php");
         ?>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

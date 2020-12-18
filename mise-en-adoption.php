@@ -14,7 +14,7 @@
 
 <body>
     <?php 
-    include("menu.php");
+    include("_menu.php");
     ?>
     
     <div class="container">
@@ -109,7 +109,7 @@
     </div>
     <!--  FOOTER START -->
     <?php
-        include("footer.php");
+        include("_footer.php");
         ?>
 
     <script type="text/javascript" src="js/jquery.js"></script>

@@ -12,22 +12,23 @@
 
 <body>
     <?php 
-    include("menu.php");
+    include("_menu.php");
     ?>
-    <div class="section-1 section-1-marg">
-        <div class="section-4" style="margin-left: 8%;margin-bottom: 2%;" id="texteenreg">
-            <p>
-                Depuis 2020, Adoptez-moi répond aux nombreux besoins des gens de l'île de Montréal, <br> de la Rive-Sud et de Laval. Le service Adoptez-moi, la qualité et la diversité de nos services sont les principaux éléments de notre
-                succès.
-            </p>
-            <p>
-                Puisque le seul but de Adoptez-moi est de trouver des abris pour des compagnons, nous mettons tous nos efforts pour que vos n'obtiennent que le meilleur.
-            </p>
+    <div class="container">
+        <div class="section-1 section-1-marg">
+            <div class="section-4" style="margin-left: 8%;margin-bottom: 2%;" id="texteenreg">
+                <p>
+                    Depuis 2020, Adoptez-moi répond aux nombreux besoins des gens de l'île de Montréal, <br> de la Rive-Sud et de Laval. Le service Adoptez-moi, la qualité et la diversité de nos services sont les principaux éléments de notre
+                    succès.
+                </p>
+                <p>
+                    Puisque le seul but de Adoptez-moi est de trouver des abris pour des compagnons, nous mettons tous nos efforts pour que vos n'obtiennent que le meilleur.
+                </p>
+            </div>
         </div>
     </div>
-
     <?php 
-    include("footer.php");
+    include("_footer.php");
     ?>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
